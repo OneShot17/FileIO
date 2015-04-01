@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC32CF841AC9A39300353137 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32CF831AC9A39300353137 /* Functions.swift */; };
 		DCE9A4991AAE31DF00DD872C /* FileIO.h in Headers */ = {isa = PBXBuildFile; fileRef = DCE9A4981AAE31DF00DD872C /* FileIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCE9A49F1AAE31DF00DD872C /* FileIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE9A4931AAE31DF00DD872C /* FileIO.framework */; };
 		DCE9A4A61AAE31DF00DD872C /* FileIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9A4A51AAE31DF00DD872C /* FileIOTests.swift */; };
+		DCE9A4B01AAE31FA00DD872C /* FileIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9A4AF1AAE31FA00DD872C /* FileIn.swift */; };
+		DCE9A4B61AAE328500DD872C /* FileOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9A4B51AAE328500DD872C /* FileOut.swift */; };
+		DCE9A4B81AAE328E00DD872C /* IOFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE9A4B71AAE328E00DD872C /* IOFlags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +27,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC32CF831AC9A39300353137 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		DCE9A4931AAE31DF00DD872C /* FileIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE9A4971AAE31DF00DD872C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE9A4981AAE31DF00DD872C /* FileIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileIO.h; sourceTree = "<group>"; };
 		DCE9A49E1AAE31DF00DD872C /* FileIOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileIOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE9A4A41AAE31DF00DD872C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE9A4A51AAE31DF00DD872C /* FileIOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileIOTests.swift; sourceTree = "<group>"; };
+		DCE9A4AF1AAE31FA00DD872C /* FileIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileIn.swift; sourceTree = "<group>"; };
+		DCE9A4B51AAE328500DD872C /* FileOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOut.swift; sourceTree = "<group>"; };
+		DCE9A4B71AAE328E00DD872C /* IOFlags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOFlags.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				DCE9A4981AAE31DF00DD872C /* FileIO.h */,
+				DCE9A4AF1AAE31FA00DD872C /* FileIn.swift */,
+				DC32CF831AC9A39300353137 /* Functions.swift */,
+				DCE9A4B51AAE328500DD872C /* FileOut.swift */,
+				DCE9A4B71AAE328E00DD872C /* IOFlags.swift */,
 				DCE9A4961AAE31DF00DD872C /* Supporting Files */,
 			);
 			path = FileIO;
@@ -209,6 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE9A4B81AAE328E00DD872C /* IOFlags.swift in Sources */,
+				DCE9A4B61AAE328500DD872C /* FileOut.swift in Sources */,
+				DCE9A4B01AAE31FA00DD872C /* FileIn.swift in Sources */,
+				DC32CF841AC9A39300353137 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +331,7 @@
 		DCE9A4AA1AAE31DF00DD872C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,12 +343,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DCE9A4AB1AAE31DF00DD872C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -397,6 +416,7 @@
 				DCE9A4AB1AAE31DF00DD872C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCE9A4AC1AAE31DF00DD872C /* Build configuration list for PBXNativeTarget "FileIOTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +425,7 @@
 				DCE9A4AE1AAE31DF00DD872C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
